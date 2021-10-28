@@ -10,8 +10,22 @@ var charSpecial = "!@#$%^&*-_=+";
 var welcome = window.alert("Welcome to my Password Generator! Let me ask you a few questions to serve your needs.");
 
 // user chooses password length
-promptPassLength = prompt("How many characters long would you like your password to be? Please choose a number between 8 and 128.");
-console.log("Your password length is " + promptPassLength + " characters long.");
+
+
+var confirmPassLength = function() {
+  var promptPassLength = prompt("How many characters long would you like your password to be? Please choose a number between 8 and 128.");
+  if (promptPassLength >7 && promptPassLength < 129) {
+    console.log("Your password length is " + promptPassLength + " characters long.");
+    return promptPassLength;    
+  } else {
+    window.alert("Please choose a number between 8 and 128.");
+    return confirmPassLength();
+  }
+  
+    
+  
+};
+passLength = confirmPassLength();
 
 // user chooses whether to include lower case alphabet
 var confirmPassLower = confirm("Would you like to include lowercase letters?");
@@ -76,13 +90,13 @@ var characterPool = string;
     characterPool += charSpecial;
   }
   
-console.log(characterPool);
+console.log("Your available characters are " + characterPool + ".");
 
 window.alert("Click the 'Generate Password' button below to view your password.")
 
 var generatePassword = function() {
   var password = "";
-  for (var i = 0; i < promptPassLength; i++) {
+  for (var i = 0; i < passLength; i++) {
     var pswrd = characterPool[Math.floor(Math.random() * characterPool.length)];
     password += pswrd;
   }
