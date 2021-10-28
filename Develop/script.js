@@ -19,12 +19,10 @@ var confirmPassLower = confirm("Would you like to include lowercase letters?");
   // if yes (true), store answer
   if (confirmPassLower) {
     console.log("You chose yes for lowercase letters.");
-    console.log(confirmPassLower);
-    
+        
   } else {
     console.log("You chose no for lowercase letters.");
-    console.log(confirmPassLower);
-    
+        
   };
 
 // user chooses whether to include upper case alphabet
@@ -63,13 +61,6 @@ var confirmPassSpec = confirm("Would you like to include special characters?");
     
   };
 
-// password info array
-var passwordInfo = [
-  {
-
-  }
-];
-
 // add characters to string if selected
 var characterPool = string;
   if (confirmPassLower) {
@@ -87,12 +78,23 @@ var characterPool = string;
   
 console.log(characterPool);
 
+window.alert("Click the 'Generate Password' button below to view your password.")
 
 var generatePassword = function() {
+  var password = "";
   for (var i = 0; i < promptPassLength; i++) {
-    
+    var pswrd = characterPool[Math.floor(Math.random() * characterPool.length)];
+    password += pswrd;
   }
+  
+  
+  console.log("Your password is " + password + ".");
+
+  return password;
+  
 };
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -105,6 +107,8 @@ function writePassword() {
   passwordText.value = password;
 
 };
+
+
 
 
 
