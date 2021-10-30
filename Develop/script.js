@@ -37,8 +37,7 @@ do {
     }
   }
   passLower = functionPassLower();
-  console.log(passLower);
-
+  
   // ask about capital letters
   var functionPassUpper = function() {
     var confirmPassUpper = confirm("How about some uppercase letters?");
@@ -51,8 +50,7 @@ do {
     }
   }
   passUpper = functionPassUpper();
-  console.log(passUpper);
-
+  
   // ask about numericals
   var functionPassNum = function() {
     var confirmPassNum = confirm("Could I convince you to include numbers?");
@@ -65,8 +63,7 @@ do {
     }
   }
   passNum = functionPassNum();
-  console.log(passNum);
-
+  
   // ask about special characters
   var functionPassSpec = function() {
     var confirmPassSpec = confirm("And finally, how about some special characters? (Like !%&+)");
@@ -79,8 +76,7 @@ do {
     }
   }
   passSpec = functionPassSpec();
-  console.log(passSpec);
-
+  
   // condition for loop to run is all criteria return as not true
 } while (passLower !== true && passUpper !== true && passNum !== true && passSpec !== true);
 
@@ -101,7 +97,7 @@ if (passSpec === true) {
 // able to view all chosen characters in console  
 console.log("Your available characters are " + characterPool + ".");
 
-window.alert("Great! Now I need you to click the 'Generate Password' button that will appear below so you can view your password. If you don't like it, try hitting the 'Generate Password' button again!")
+window.alert("Great! Now after hitting the 'OK' button here, I will need you to click the 'Generate Password' button that will appear below. Then you can view your password. If you're not satisfied, try hitting the 'Generate Password' button again!")
 
 var generatePassword = function() {
   var password = "";
